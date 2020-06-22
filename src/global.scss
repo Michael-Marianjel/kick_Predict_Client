@@ -1,0 +1,220 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+/*
+ * Dark Colors
+ * -------------------------------------------
+ */
+
+body.dark {
+  ///** primary **/
+  //--ion-color-primary: #3880ff;
+  //--ion-color-primary-rgb: 56, 128, 255;
+  //--ion-color-primary-contrast: #ffffff;
+  //--ion-color-primary-contrast-rgb: 255, 255, 255;
+  //--ion-color-primary-shade: #3171e0;
+  //--ion-color-primary-tint: #4c8dff;
+  //
+  ///** secondary **/
+  //--ion-color-secondary: #3dc2ff;
+  //--ion-color-secondary-rgb: 61, 194, 255;
+  //--ion-color-secondary-contrast: #ffffff;
+  //--ion-color-secondary-contrast-rgb: 255, 255, 255;
+  //--ion-color-secondary-shade: #36abe0;
+  //--ion-color-secondary-tint: #50c8ff;
+  //
+  ///** tertiary **/
+  //--ion-color-tertiary: #5260ff;
+  //--ion-color-tertiary-rgb: 82, 96, 255;
+  //--ion-color-tertiary-contrast: #ffffff;
+  //--ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  //--ion-color-tertiary-shade: #4854e0;
+  //--ion-color-tertiary-tint: #6370ff;
+  //
+  ///** success **/
+  //--ion-color-success: #2dd36f;
+  //--ion-color-success-rgb: 45, 211, 111;
+  //--ion-color-success-contrast: #ffffff;
+  //--ion-color-success-contrast-rgb: 255, 255, 255;
+  //--ion-color-success-shade: #28ba62;
+  //--ion-color-success-tint: #42d77d;
+  //
+  ///** warning **/
+  //--ion-color-warning: #ffc409;
+  //--ion-color-warning-rgb: 255, 196, 9;
+  //--ion-color-warning-contrast: #000000;
+  //--ion-color-warning-contrast-rgb: 0, 0, 0;
+  //--ion-color-warning-shade: #e0ac08;
+  //--ion-color-warning-tint: #ffca22;
+  //
+  ///** danger **/
+  //--ion-color-danger: #eb445a;
+  //--ion-color-danger-rgb: 235, 68, 90;
+  //--ion-color-danger-contrast: #ffffff;
+  //--ion-color-danger-contrast-rgb: 255, 255, 255;
+  //--ion-color-danger-shade: #cf3c4f;
+  //--ion-color-danger-tint: #ed576b;
+  //
+  ///** dark **/
+  //--ion-color-dark: #222428;
+  //--ion-color-dark-rgb: 34, 36, 40;
+  //--ion-color-dark-contrast: #ffffff;
+  //--ion-color-dark-contrast-rgb: 255, 255, 255;
+  //--ion-color-dark-shade: #1e2023;
+  //--ion-color-dark-tint: #383a3e;
+  //
+  ///** medium **/
+  //--ion-color-medium: #92949c;
+  //--ion-color-medium-rgb: 146, 148, 156;
+  //--ion-color-medium-contrast: #ffffff;
+  //--ion-color-medium-contrast-rgb: 255, 255, 255;
+  //--ion-color-medium-shade: #808289;
+  //--ion-color-medium-tint: #9d9fa6;
+  //
+  ///** light **/
+  //--ion-color-light: #f4f5f8;
+  //--ion-color-light-rgb: 244, 245, 248;
+  //--ion-color-light-contrast: #000000;
+  //--ion-color-light-contrast-rgb: 0, 0, 0;
+  //--ion-color-light-shade: #d7d8da;
+  //--ion-color-light-tint: #f5f6f9;
+}
+
+/*
+ * iOS Dark Theme
+ * -------------------------------------------
+ */
+
+.ios body.dark {
+  //--ion-background-color: #ffffff;
+  //--ion-background-color-rgb: 255,255,255;
+  //
+  //--ion-text-color: #000000;
+  //--ion-text-color-rgb: 0,0,0;
+  //
+  //
+  //--ion-color-step-50: #f2f2f2;
+  //--ion-color-step-100: #e6e6e6;
+  //--ion-color-step-150: #d9d9d9;
+  //--ion-color-step-200: #cccccc;
+  //--ion-color-step-250: #bfbfbf;
+  //--ion-color-step-300: #b3b3b3;
+  //--ion-color-step-350: #a6a6a6;
+  //--ion-color-step-400: #999999;
+  //--ion-color-step-450: #8c8c8c;
+  //--ion-color-step-500: #808080;
+  //--ion-color-step-550: #737373;
+  //--ion-color-step-600: #666666;
+  //--ion-color-step-650: #595959;
+  //--ion-color-step-700: #4d4d4d;
+  //--ion-color-step-750: #404040;
+  //--ion-color-step-800: #333333;
+  //--ion-color-step-850: #262626;
+  //--ion-color-step-900: #191919;
+  //--ion-color-step-950: #0d0d0d;
+  //
+  //--ion-toolbar-background: #f2f2f2;
+  //
+  //--ion-item-background: #ffffff;
+}
+
+
+/*
+ * Material Design Dark Theme
+ * -------------------------------------------
+ */
+
+.md body.dark {
+  //--ion-background-color: #ffffff;
+  //--ion-background-color-rgb: 255,255,255;
+  //
+  //--ion-text-color: #000000;
+  //--ion-text-color-rgb: 0,0,0;
+  //
+  //--ion-border-color: #e7e7e7;
+  //
+  //--ion-color-step-950: #1e1e1e;
+  //--ion-color-step-900: #2a2a2a;
+  //--ion-color-step-850: #363636;
+  //--ion-color-step-800: #414141;
+  //--ion-color-step-750: #4d4d4d;
+  //--ion-color-step-700: #595959;
+  //--ion-color-step-650: #656565;
+  //--ion-color-step-600: #717171;
+  //--ion-color-step-550: #7d7d7d;
+  //--ion-color-step-500: #898989;
+  //--ion-color-step-450: #949494;
+  //--ion-color-step-400: #a0a0a0;
+  //--ion-color-step-350: #acacac;
+  //--ion-color-step-300: #b8b8b8;
+  //--ion-color-step-250: #c4c4c4;
+  //--ion-color-step-200: #d0d0d0;
+  //--ion-color-step-150: #dbdbdb;
+  //--ion-color-step-100: #e7e7e7;
+  //--ion-color-step-50: #f3f3f3;
+  //
+  //--ion-item-background: #f3f3f3;
+  //
+  //--ion-toolbar-background: #f2f2f2;
+  //
+  //--ion-tab-bar-background: #ffffff;
+}
+
+
+
+ion-content{
+  --ion-background-color:#f7f7f7;
+  ion-item{
+    --ion-background-color:#fff !important;
+  }
+  ion-list{
+    background: #f7f7f7 !important;
+  }
+  ion-searchbar{
+    --background:#f7f7f7 !important;
+  }
+  ion-checkbox{
+    --background:#f7f7f7 !important
+  }
+}
+*{
+  font-family: 'Lato', sans-serif;
+}
+ion-tab-bar {
+  background: #fff;
+  border-top: none;
+}
+ion-tab-button {
+  background: #fff;
+}
+ion-header{
+  --ion-background-color: #fff;
+  --background: #fff;
+}

@@ -1,0 +1,31 @@
+ion-content{
+  .logo-img{
+    padding:{
+      top:20px;
+      bottom:20px;
+    }
+  }
+  ion-img{
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    //opacity: 0.5;
+  }
+}
+.container{
+  max-width: 600px;
+  margin: 0 auto;
+  padding:20px;
+  background: #fff;
+  ion-item {
+    --ion-background-color: #fff;
+  }
+}
+@media screen and (max-width: 360px){
+  .container{
+    ion-img{
+      width: 190px;
+      //opacity: 0.5;
+    }
+  }
+}

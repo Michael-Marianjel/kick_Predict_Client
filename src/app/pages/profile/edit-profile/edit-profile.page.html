@@ -1,0 +1,29 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <form (ngSubmit)="onEditProfile(f)" #f="ngForm">
+      <ion-item mode="ios">
+        <ion-label position="floating">Full Name</ion-label>
+        <ion-input type="text" ngModel="" [value]="user?.user?.name" name="name"></ion-input>
+      </ion-item>
+      <ion-item mode="ios">
+        <ion-label position="floating">Paypal Email</ion-label>
+        <ion-input type="email" ngModel="" name="email" [value]="user?.user?.email" ></ion-input>
+      </ion-item>
+<!--      <ion-item mode="ios">-->
+<!--        <ion-label position="floating">Paypal address</ion-label>-->
+<!--        <ion-input type="email" ngModel=""  [value]="user?.user?.paypal" name="paypal"></ion-input>-->
+<!--      </ion-item>-->
+      <div class="ion-padding-start ion-padding-end">
+        <ion-button
+                type="submit"
+                    size="full" mode="ios">Submit</ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>

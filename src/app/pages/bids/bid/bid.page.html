@@ -1,0 +1,53 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+    <ion-title>Bid</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-card mode="ios" *ngIf="bid">
+      <ion-card-header>
+        <ion-card-subtitle class="ion-text-center" mode="md">
+          <div class="heading">
+            <b>{{bid?.sneaker?.name}}, Sz {{size[bid?.sneaker.size]}}</b>
+          </div>
+        </ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-img *ngIf="bid?.sneaker?.image?.url" class="height150 ion-hide-md-up"
+               [src]="imageHost + bid?.sneaker?.image?.url" alt=""></ion-img>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col class="ion-hide-md-down">
+              <ion-img *ngIf="bid?.sneaker?.image?.url" class="ion-hide-md-down" [src]="imageHost + bid?.sneaker?.image?.url" alt=""> </ion-img>
+            </ion-col>
+            <ion-col>
+              <ion-grid>
+                <ion-row>
+                  <ion-col class="ion-text-center">
+                    <p class="">
+                      You placed a bid that it will sell <b>{{bid.bid}}</b>
+                      ${{bid?.settlement_price | number:'1.2-2'}} on
+                      {{bid?.created_at | date: 'EE, MMM d, y, h:mm aaaaa'}} EST
+                    </p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button size="full" color="danger"
+                          (click)="cancelBid(bid.id)">
+                Cancel Bid
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

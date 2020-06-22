@@ -1,0 +1,15 @@
+.container{
+  //padding:20px;
+  padding-bottom: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  *{
+    --ion-background-color: #fff;
+  }
+  .heading{
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 600;
+  }
+}

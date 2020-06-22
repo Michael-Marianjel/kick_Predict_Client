@@ -1,0 +1,31 @@
+
+.container{
+  //padding:20px;
+  max-width: 600px;
+  margin: 0 auto;
+  *{
+    --ion-background-color: #fff;
+  }
+  .heading{
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 600;
+  }
+  .bet-amount{
+    font-size:20px;
+    text-align: center;
+  }
+  .matched{
+    font-size: 12px;
+  }
+  ion-list{
+    --ion-background-color:#fff;
+  }
+  ion-item {
+    --ion-background-color:#fffdfd;
+    cursor:pointer;
+  }
+  ion-item.item-matched{
+    --ion-background-color: #fff ;
+  }
+}

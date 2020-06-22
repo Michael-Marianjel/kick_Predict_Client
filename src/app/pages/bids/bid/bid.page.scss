@@ -1,0 +1,45 @@
+.container{
+  //padding:20px;
+  max-width: 600px;
+  margin: 0 auto;
+  //background-color: #fff;
+  *{
+    --ion-background-color: #fff;
+  }
+  ion-card{
+    background-color: #fff;
+  }
+  .heading{
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 500;
+  }
+}
+.height150{
+  height: 150px;
+}
+@media screen and (max-width: 450px){
+  ion-card{
+    margin: 5px;
+  }
+  .container{
+    ion-card-subtitle{
+      .heading{
+        font-size: 13px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 360px){
+  .container{
+    ion-card-header{
+      padding-left:10px;
+      padding-right:10px;
+    }
+    ion-card-subtitle{
+      .heading{
+        font-size: 12px;
+      }
+    }
+  }
+}

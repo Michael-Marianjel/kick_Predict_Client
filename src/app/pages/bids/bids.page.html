@@ -1,0 +1,44 @@
+<ion-header mode="ios">
+    <ion-toolbar>
+        <ion-title>Bids</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-list mode="ios">
+      <ion-item class="item-matched" *ngFor="let bid of bids" (click)="onBidSelect(bid)">
+        <div style="max-width:50px" slot="start">
+          <img [src]="imageHost + bid?.sneaker?.image?.url">
+        </div>
+        <ion-label class="ion-text-wrap">
+          <h2>{{bid?.sneaker?.name}}</h2>
+          <h3>{{bid?.bid | titlecase}} ${{bid?.settlement_price | number:'1.2-2'}}</h3>
+          <p>on {{bid?.created_at | date: 'MMM d, y'}}</p>
+        </ion-label>
+        <div slot="end" class="bet-amount ion-text-end">
+          ${{bid?.amount}}
+          <div class="matched">
+            <ion-text color="success"
+                      *ngIf="bid?.status === 'matched'">
+              {{bid?.status | titlecase}}
+            </ion-text>
+            <ion-text color="" *ngIf="bid?.status === 'unmatched'">
+              Finding Match
+            </ion-text>
+            <ion-text color=""  *ngIf="bid?.status === 'won'">
+             {{bid?.status | titlecase}}
+            </ion-text>
+            <ion-text color="" *ngIf="bid?.status === 'lost'">
+              {{bid?.status | titlecase}}
+            </ion-text>
+            <ion-text color=""  *ngIf="bid?.status === 'cancelled'">
+              {{bid?.status | titlecase}}
+            </ion-text>
+
+          </div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

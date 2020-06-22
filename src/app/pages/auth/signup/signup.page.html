@@ -1,0 +1,36 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+    <ion-title>signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <ion-text>
+      <h2 class="ion-padding-bottom">Sign-Up</h2>
+    </ion-text>
+    <!-- form with input text and submit buttons -->
+    <form (ngSubmit)="onSignup(f)" #f="ngForm">
+      <ion-item mode="ios">
+        <ion-label position="floating">Full Name</ion-label>
+        <ion-input type="text" ngModel="" name="name" required=""></ion-input>
+      </ion-item>
+<!--      <ion-item mode="ios">-->
+<!--        <ion-label position="floating">Username</ion-label>-->
+<!--        <ion-input type="text" ngModel="" name="username"></ion-input>-->
+<!--      </ion-item>-->
+      <ion-item mode="ios">
+        <ion-label position="floating">Paypal Email</ion-label>
+        <ion-input type="email" ngModel="" name="email" required></ion-input>
+      </ion-item>
+      <ion-item mode="ios">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" ngModel="" name="password" required></ion-input>
+      </ion-item>
+      <ion-button mode="ios" [disabled]="!f.valid || isLoading" expand="block" type="submit">Register</ion-button>
+      <ion-button mode="ios" [disabled]="isLoading" expand="block" routerLink="/login">Login</ion-button>
+<!--      <ion-button mode="ios" expand="block" color="danger">Google</ion-button>-->
+<!--      <ion-button mode="ios" expand="block">facebook</ion-button>-->
+    </form>
+  </div>
+</ion-content>

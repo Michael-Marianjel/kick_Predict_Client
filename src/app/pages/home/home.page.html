@@ -1,0 +1,138 @@
+<ion-header mode="ios">
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content forceOverscroll="false" no-bounce has-bouncing="false" >
+  <ion-slides pager="true" [options]="slideOpts" *ngIf="false">
+    <ion-slide>
+      <img src="https://cdn11.bigcommerce.com/s-hm8pjhul3k/content/img/shoes-occasion-4.jpg" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="https://assets.adidas.com/images/w_600,f_auto,q_auto:sensitive,fl_lossy/d5cbe30480cb48dab64ca91500a0530b_9366/Continental_80_Shoes_White_G27706_06_standard.jpg" alt="">
+
+    </ion-slide>
+    <ion-slide>
+      <img src="https://assets.adidas.com/images/w_600,f_auto,q_auto:sensitive,fl_lossy/d5cbe30480cb48dab64ca91500a0530b_9366/Continental_80_Shoes_White_G27706_06_standard.jpg" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="https://assets.adidas.com/images/w_600,f_auto,q_auto:sensitive,fl_lossy/7ed0855435194229a525aad6009a0497_9366/Superstar_Shoes_White_EG4958_01_standard.jpg" alt="">
+    </ion-slide>
+  </ion-slides>
+  <div class="container">
+    <ion-card mode="ios" *ngIf="!sneakers || sneakers.length === 0">
+      <ion-card-content>
+        <div class="ion-text-center">
+          No sneaker for now!
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card mode="ios" *ngIf="currentSneaker">
+      <ion-card-header>
+        <ion-card-subtitle class="ion-text-center" mode="md">
+          <div class="heading">
+            {{currentSneaker?.name}}, Sz {{size[currentSneaker?.size]}} Avg of Last 20 Sales ${{currentSneaker?.last_sale_price | number:'1.2-2'}}.
+<!--            is at ${{currentSneaker?.last_sale_price}},-->
+            <br>will the
+            Avg of the Final 20 Sales be
+            <ion-text>Higher</ion-text> or
+            <ion-text>Lower</ion-text>
+            than ${{currentSneaker?.settlement_price | number:'1.2-2'}}<br>on
+<!--            <b>{{currentSneaker?.settlement_date | date: 'EE, MMM d, y @ h:mm a' : 'EST'}} EST </b>?-->
+            <b>{{currentSneaker?.settlement_date | date: 'EE, MMM d' : 'EST'}} by </b>
+            <b>{{currentSneaker?.settlement_date | date: 'h:mm a' : 'EST'}} EST </b>?
+          </div>
+        </ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-img *ngIf="currentSneakerImage" class="height150 ion-hide-md-up" [src]="imageHost + currentSneakerImage" alt=""></ion-img>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col class="ion-hide-md-down">
+              <ion-img *ngIf="currentSneakerImage" class="ion-hide-md-down" [src]="imageHost + currentSneakerImage" alt=""> </ion-img>
+            </ion-col>
+            <ion-col *ngIf="!currentSneaker?.allowBidding" class="bid-unavail">
+              <p class="ion-text-center">
+                Betting Window Closed
+              </p>
+              <p>Over / Under: ${{currentSneaker?.settlement_price | number:'1.2-2'}}</p>
+              <p class="ion-text-center">Contest End: {{currentSneaker?.settlement_date | date: 'EE, MMM d, y @ h:mm a' : 'EST'}} EST</p>
+            </ion-col>
+            <ion-col *ngIf="currentSneaker?.allowBidding">
+              <ion-grid>
+                <ion-row class="ion-text-center">
+                  <ion-col>
+                    <ion-button
+                            [attr.fill]="isHigh? 'solid' : 'outline'"
+                            [ngClass]="{'activatedHighBtn': isHigh}"
+                            (click)="onHigh()" class="btn-increase ion-no-padding" color="success" shape="round">
+                      <ion-icon name="arrow-up-outline"></ion-icon>
+                    </ion-button>
+                    <div class="helper-text"  >Higher than ${{currentSneaker?.settlement_price | number:'1.2-2'}}</div>
+                  </ion-col>
+
+                  <ion-col class="ion-align-items-center ion-justify-content-center" style="display: flex;">
+                    <h3>
+                      OR
+                    </h3>
+                  </ion-col>
+
+                  <ion-col>
+                    <ion-button
+                            [attr.fill]="isHigh === false ? 'solid' : 'outline'"
+                             [ngClass]="{'activatedLowBtn': isHigh === false}"
+                            (click)="onLow()" class="btn-decrease ion-no-padding" color="danger" shape="round">
+                      <ion-icon name="arrow-down-outline"></ion-icon>
+                    </ion-button>
+                    <div class="helper-text">Lower than ${{currentSneaker?.settlement_price | number:'1.2-2'}}</div>
+                  </ion-col>
+
+                </ion-row>
+              </ion-grid>
+              <ion-grid>
+                <ion-row>
+                  <ion-col class="ion-text-center">
+                    <ion-button size="full" class="bet-btn"
+                                [disabled]="!(isHigh === true || isHigh === false)"
+                                (click)="onBet(currentSneaker?.config?.bet)">
+                      Bet ${{currentSneaker?.config?.bet}} | Win ${{ currentSneaker?.config?.bet*2 - (currentSneaker?.config?.bet*2 * currentSneaker?.config?.percent / 100 )}}
+                    </ion-button>
+                    <p class="helper-text" *ngIf="!untouched" [ngClass]="{'higher': isHigh, 'lower': isHigh === false}">
+                      You win if the Last Sale is {{isHigh?'HIGHER': 'LOWER'}}
+                      than ${{currentSneaker?.settlement_price | number:'1.2-2'}} by
+                      {{currentSneaker?.settlement_date | date: 'EE, MMM d, y @ h:mm a' : 'EST'}} EST
+                    </p>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-grid class="navigation-btns" *ngIf="false">
+                <ion-row>
+                  <ion-col>
+                    <a class="" *ngIf="currentIndex > 0" (click)="prev()" ><ion-icon name="chevron-back-outline"></ion-icon> Previous</a>
+                  </ion-col>
+                  <ion-col class="ion-text-end">
+                    <a class="next-link"
+                       *ngIf="currentIndex < sneakers?.length-1"
+                       (click)="next()">Next <ion-icon name="chevron-forward-outline"></ion-icon></a>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div class="footer">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-text-start">beta by KickPredict</ion-col>
+        <ion-col class="ion-text-end">prices from Stockx</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

@@ -1,0 +1,57 @@
+<ion-header mode="ios">
+    <ion-toolbar>
+        <ion-title>Login</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <form action="" (ngSubmit)="onLogin(f)" #f='ngForm'>
+        <div class="container">
+            <ion-img class="logo-img" src="assets/images/logo.JPG"></ion-img>
+                <ion-item mode="ios">
+                    <ion-input type="text"
+                               ngModel=""
+                               placeholder="Email or Username" name="identifier" required>
+                    </ion-input>
+                </ion-item>
+                <ion-item mode="ios">
+                    <ion-input type="password"  ngModel=""
+                               placeholder="Password" name="password" required>
+                    </ion-input>
+                </ion-item>
+            <ion-row>
+                <ion-col size="12">
+                    <ion-button mode="ios" expand="block" type="submit"  [disabled]="isLoading">Login</ion-button>
+                </ion-col>
+                <ion-col size="12">
+                    <!-- expanded buton -->
+                    <ion-button mode="ios" routerLink="/forgot-password" expand="block" fill="clear" >
+                        <b>I Forgot My Password</b>
+                    </ion-button>
+                </ion-col>
+                <!--      <ion-col size="12">-->
+                <!--        &lt;!&ndash; expanded buton &ndash;&gt;-->
+                <!--        <ion-button mode="ios" expand="block" type="submit">Login with-->
+                <!--          <ion-icon name="logo-facebook"></ion-icon>-->
+                <!--        </ion-button>-->
+                <!--      </ion-col>-->
+                <!--      <ion-col size="12">-->
+                <!--        &lt;!&ndash; expanded buton &ndash;&gt;-->
+                <!--        <ion-button mode="ios" expand="block" color="danger" type="submit">Login with-->
+                <!--          <ion-icon name="logo-google"></ion-icon>-->
+                <!--        </ion-button>-->
+                <!--      </ion-col>-->
+                <ion-col size="12">
+                    <!-- expanded buton -->
+                    <ion-button mode="ios" fill="outline"
+                                type="button"
+                                [disabled]="isLoading"
+                                [routerLink]="['/signup']"
+                                [queryParams]="this.queryParams"
+                                expand="block">Register
+                    </ion-button>
+                </ion-col>
+            </ion-row>
+        </div>
+    </form>
+</ion-content>

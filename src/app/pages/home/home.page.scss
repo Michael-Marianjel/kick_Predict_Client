@@ -1,0 +1,144 @@
+.container{
+  //padding:20px;
+  max-width: 600px;
+  margin: 0 auto;
+  //background-color: #fff;
+  *{
+    --ion-background-color: #fff;
+  }
+  ion-card{
+    background-color: #fff;
+  }
+  .heading{
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: 500;
+  }
+}
+.helper-text{
+  font-size: 0.6rem;
+}
+.helper-text-p{
+  font-size: 11px;
+}
+.btn-decrease,.btn-increase{
+  width:65px;
+  height:65px;
+  --padding:0;
+  border: 5px solid transparent;
+  color:white;
+}
+.navigation-btns{
+  ion-button{
+    min-width: 120px;
+  }
+  a{
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .next-link{
+    justify-content: flex-end;
+  }
+}
+.bet-btn{
+  min-height: 54px;
+  font-size: 17px;
+}
+//.activatedHighBtn{
+//  border: 5px solid #19ff004d;
+//  border-radius: 50%;
+//}
+//.activatedLowBtn{
+//  border-radius: 50%;
+//  border: 5px solid #f17b7b6e;
+//}
+.height150{
+  height: 150px;
+}
+@media screen and (max-width: 600px) {
+  .container{
+    ion-card-subtitle{
+      .heading{
+        //font-size: 13px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 450px){
+  ion-card{
+    margin: 5px;
+  }
+ .container{
+   ion-card-subtitle{
+     .heading{
+       //font-size: 13px;
+       font-size: 10px;
+     }
+   }
+   ion-card-content{
+     padding: 10px;
+   }
+ }
+}
+@media screen and (max-width: 360px){
+  .container{
+    ion-card-header{
+      padding-left:10px;
+      padding-right:10px;
+    }
+    .height150{
+      height: 120px;
+    }
+    ion-card-subtitle{
+      .heading{
+        //font-size: 12px;
+        font-size: 10px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 340px){
+  .container {
+    ion-card-subtitle{
+      .heading{
+        font-size: 10px;
+      }
+    }
+    .height150{
+      height: 100px;
+    }
+  }
+}
+@media screen and (max-height: 630px){
+  .container {
+    .height150{
+      height: 80px;
+    }
+    ion-card-subtitle{
+      .heading{
+        line-height: 17px;
+      }
+    }
+    ion-card-header{
+      padding: 10px;
+    }
+  }
+}
+ion-content{
+  position: relative;
+}
+.footer{
+  bottom: 0;
+  width:100%;
+  font-size:12px;
+  color: grey;
+}
+.bid-unavail{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
